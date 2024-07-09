@@ -1,0 +1,23 @@
+Sub GenerateRandomNumbers()
+        Dim i As Double
+    
+        ' Generate random numbers between 200 and 1000 in column A
+        For i = 2 To 101
+            Cells(i, 1).Value = Int((1000 - 200 + 1) * Rnd + 200)
+        Next i
+        
+        ' Calculate the squares of the random numbers and place the results in column B
+        For i = 2 To 101
+            Cells(i, 2).Value = Cells(i, 1).Value ^ 2
+        Next i
+        
+        ' Determine whether each number in column A is odd or even and display the result in column C
+        For i = 2 To 101
+            If Cells(i, 1).Value Mod 2 = 0 Then
+                Cells(i, 3).Value = "Even"
+            Else
+                Cells(i, 3).Value = "Odd"
+            End If
+        Next i
+    
+End Sub
